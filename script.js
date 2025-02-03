@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Page 1 Logic
+  // Page 1 Elements
   const yesButton = document.getElementById('yes');
   const noButton = document.getElementById('no');
   const page1 = document.getElementById('page1');
   const page2 = document.getElementById('page2');
-  const backgroundMusic = document.getElementById('background-music');
+  const backgroundMusic = document.querySelector('audio');
 
   // Preload the audio file
   backgroundMusic.load();
@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     noButton.style.top = `${y}px`;
   };
 
+  // Move the "No" button when hovered
+  noButton.addEventListener('mouseover', moveNoButton);
+
   // Play music and move the "No" button when clicked
   noButton.addEventListener('click', () => {
     backgroundMusic.play(); // Play music after user interaction
     moveNoButton(); // Move the button randomly
   });
-
-  // Move the "No" button when hovered
-  noButton.addEventListener('mouseover', moveNoButton);
 
   // Play music and show Page 2 when "Yes" is clicked
   yesButton.addEventListener('click', () => {
