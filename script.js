@@ -16,6 +16,14 @@ noButton.addEventListener('mouseover', () => {
   noButton.style.top = `${y}px`;
 });
 
+document.getElementById('yes').addEventListener('click', function() {
+  document.querySelector('audio').play();
+});
+
+document.getElementById('no').addEventListener('click', function() {
+  document.querySelector('audio').play();
+});
+
 // Page 2 Logic
 const confirmButton = document.getElementById('confirm');
 confirmButton.addEventListener('click', () => {
