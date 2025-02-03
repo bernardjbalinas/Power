@@ -3,10 +3,13 @@ const yesButton = document.getElementById('yes');
 const noButton = document.getElementById('no');
 const page1 = document.getElementById('page1');
 const page2 = document.getElementById('page2');
+const backgroundMusic = document.getElementById('background-music');
 
+// Play music when the user clicks "Yes" or "No"
 yesButton.addEventListener('click', () => {
   page1.classList.add('hidden');
   page2.classList.remove('hidden');
+  backgroundMusic.play(); // Play music after user interaction
 });
 
 noButton.addEventListener('mouseover', () => {
@@ -16,12 +19,8 @@ noButton.addEventListener('mouseover', () => {
   noButton.style.top = `${y}px`;
 });
 
-document.getElementById('yes').addEventListener('click', function() {
-  document.querySelector('audio').play();
-});
-
-document.getElementById('no').addEventListener('click', function() {
-  document.querySelector('audio').play();
+noButton.addEventListener('click', () => {
+  backgroundMusic.play(); // Play music after user interaction
 });
 
 // Page 2 Logic
